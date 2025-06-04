@@ -66,12 +66,7 @@ pipeline {
 
     post {
         always {
-            script{
-                echo 'Cleaning up...'
-                sh "docker rmi ${env.IMAGE_NAME}:${env.BUILD_NUMBER} || true"
-                sh "docker rmi ${env.IMAGE_NAME}:latest || true"
-                echo 'Build completed.'
-            }
+            echo 'Build completed.'
 
         }
         success {
