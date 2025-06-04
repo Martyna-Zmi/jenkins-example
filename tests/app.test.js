@@ -1,14 +1,15 @@
-const request = require("supertest");
-const app = require("../app/server");
+const request = require('supertest');
+const app = require('../app/app');
 
-describe("GET /status", () => {
-    it("should return API status", async () => {
-        return request(app)
-            .get("/status")
-            .expect('Content-Type', /json/)
-            .expect(200)
-            // .then((res) => {
-            //     expect(res.json).toBe(200);
-            // })
+describe('API tests', () => {
+    it('GET /status returns status', async () => {
+        const res = await request(app).get('/status');
+        expect(res.statusCode).toBe(200);
+    });
+    it('GET /data should return sample message data', async () => {
+        const res = await request(app).get('/data');
+        expect(res.statusCode).toBe(200);
+        expect(res.body).toEqual({ message: 'Hello world!' });
     });
 });
+

@@ -2,7 +2,6 @@ FROM jenkins/inbound-agent:latest
 
 USER root
 
-# Instalacja Node.js, npm, Git, Docker CLI, curl, jq
 RUN apt-get update && apt-get install -y \
     curl \
     git \
@@ -13,5 +12,4 @@ RUN apt-get update && apt-get install -y \
     && npm install -g npm \
     && apt-get clean
 
-# Sprawdzenie wersji
 RUN node -v && npm -v && git --version && docker --version && jq --version
