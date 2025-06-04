@@ -15,7 +15,7 @@
     "outputName": "junit.xml"
   },
   "scripts": {
-    "test": "../node_modules/.bin/jest --coverage --reporters=default --reporters=jest-junit"
+    "test": "jest --coverage --reporters=default --reporters=jest-junit"
   },
   "devDependencies": {
     "jest-junit": "^16.0.0"
