@@ -40,7 +40,11 @@ pipeline {
             steps {
                 script {
                     sh """
-                        docker build -t ${env.IMAGE_NAME}:${env.BUILD_NUMBER} -t ${env.IMAGE_NAME}:latest app/
+                          docker build \
+                            -t ${env.IMAGE_NAME}:${env.BUILD_NUMBER} \
+                            -t ${env.IMAGE_NAME}:latest \
+                            -f app/Dockerfile \
+                            app/
                     """
                 }
             }
