@@ -1,0 +1,10 @@
+{
+  "name": "jenkins-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "private": true,
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
